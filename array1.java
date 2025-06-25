@@ -24,17 +24,31 @@ public class array1 {
     }
     public void duplicates() {
 
+       
         int[] arr2 = { 3, 5, 6, 7, 7, 0, 7, 4 };
-        for (int j = 0; j < arr2.length; j++) {
-            for(int i = j+1; i< arr2.length; i++){
+        int[] arr3 = new int[arr2.length];
+        for(int i=0;i<arr2.length;i++){
+            int count = 1;
+            for(int j=i+1; j<arr2.length;j++){
+                if(arr2[i]==arr2[j]){
+                    count++;
+                    arr3[j]=-1;
+                
 
-                if(arr2[i] == arr2[j]){
-                    System.out.println("duplicate is found at " + i);
                 }
-
+                if(arr3[i]!=-1){
+                    arr3[i]=count;
+                }
+                
             }
-            
         }
-        
+        for(int f=0; f<arr3.length; f++){
+            if(arr3[f]>0){
+                System.out.println(arr2[f]+ " Occurs "+ arr3[f] + " times");
+            }
+           
+
+        }
+     
     }
 }
